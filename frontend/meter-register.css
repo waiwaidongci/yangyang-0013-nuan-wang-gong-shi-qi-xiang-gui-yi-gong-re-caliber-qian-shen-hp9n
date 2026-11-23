@@ -1,0 +1,8 @@
+.meter-desk { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(230px,1fr); gap:.9rem; align-items:start; }
+.meter-register { list-style:none; padding:0; margin:.55rem 0 1.1rem; }
+.meter-register li { display:grid; grid-template-columns:1fr 1fr 2fr; gap:.6rem; padding:.55rem .3rem; border-bottom:1px dashed var(--s-line); }
+.meter-register strong,.meter-flow td:nth-child(2) { font-family:var(--mono); }
+.meter-scroll { overflow:auto; }
+.meter-flow :is(td,th) { white-space:nowrap; }
+.meter-desk form + form { margin-top:1rem; border-top:1px dashed var(--s-line); padding-top:1rem; }
+@media(max-width:750px) { .meter-desk { grid-template-columns:1fr; } }

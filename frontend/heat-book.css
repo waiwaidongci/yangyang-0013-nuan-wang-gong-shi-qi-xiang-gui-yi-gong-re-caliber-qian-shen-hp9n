@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Noto+Serif+SC:wght@500;650;750&display=swap');
+:root {
+  --s-page: oklch(95% .025 73);
+  --s-panel: oklch(98% .015 73);
+  --s-ink: oklch(29% .047 47);
+  --s-muted: oklch(47% .048 47);
+  --s-line: oklch(79% .056 59);
+  --s-accent: oklch(43% .107 38);
+  --s-onaccent: oklch(98% .015 73);
+  --s-error: oklch(38% .14 29);
+  --s-ok: oklch(41% .095 142);
+  --s-display: 'Noto Serif SC', serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+.heat-mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.heat-title { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 1.15rem; padding-bottom: .85rem; border-bottom: 3px double var(--s-line); margin-bottom: 1.2rem; }
+.heat-title h1 { font-size: clamp(1.8rem,4vw,3.6rem); margin: 0; }
+.heat-title p { margin: .55rem 0 0; color: var(--s-muted); }
+.period-tab { width: min(100%,330px); }
+.heat-sheet, .coverage-ruler, .register-sheet, .notice-sheet { background: var(--s-panel); border: 1px solid var(--s-line); padding: clamp(.9rem,2vw,1.65rem); }
+.heat-sheet h2, .coverage-ruler h2, .register-sheet h2 { border-bottom: 1px solid var(--s-line); padding-bottom: .55rem; }
+.coverage-ruler { border-top: 4px solid var(--s-accent); }
+.coverage-ruler ul { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 1rem; list-style: none; padding: 0; }
+.coverage-ruler li { display: grid; gap: .45rem; align-content: start; padding: .6rem .7rem; border-top: 3px solid var(--s-accent); background: var(--s-page); }
+.coverage-ruler strong { font-size: 1.12rem; }
+.heat-panels { margin-top: 1rem; display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+.field-pair { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .8rem; }
+.outlet form { display: grid; gap: .75rem; }
+.outlet form > button { justify-self: start; }
+[data-feedback]:empty { display: none; }
+[data-feedback] { margin-top: .65rem; }
+.ledger-layout { display: grid; gap: .95rem; grid-template-columns: minmax(0,1.75fr) minmax(210px,.8fr); align-items: start; }
+.zone-ledger { overflow: auto; margin-bottom: 1rem; }
+.zone-ledger table :is(th,td) { padding: .45rem; text-align: left; overflow-wrap: anywhere; }
+.zone-ledger h3 { margin: .65rem 0; font-family: var(--s-display); }
+.zone-ledger small { display: block; }
+.zone-ledger button.gap-mark { border-style: dashed; font-size: .8rem; color: var(--s-error); background: transparent; }
+.outlet .status-chip.missing, .flag-line { color: var(--s-error); }
+.version-deck { border-top: 4px solid var(--s-accent); }
+.version-deck > header { display: flex; align-items: end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: .85rem; }
+.version-deck > header h2 { border: 0; padding: 0; margin: 0; }
+.metric-folio { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .9rem; }
+.version-output { padding: .9rem; border-top: 3px solid var(--s-accent); background: var(--s-page); margin-bottom: .7rem; }
+.version-output header { border-bottom: 1px dashed var(--s-line); }
+.version-output :is(h3,p) { margin-bottom: .4rem; }
+.version-output dl { margin: .55rem 0 0; }
+.version-output dl > div { display: grid; grid-template-columns: 1fr minmax(125px,1fr); gap: .35rem; border-bottom: 1px solid var(--s-line); padding: .35rem 0; }
+.version-output dd { margin: 0; font-family: var(--mono); font-size: .8rem; }
+.version-deck summary { cursor: pointer; font-weight: 600; }
+.version-trail li { margin-bottom: .3rem; }
+.version-trail small { display: block; }
+.notice-sheet { max-width: 830px; border-top: 4px solid var(--s-accent); }
+.notice-sheet > header { display: flex; align-items: center; justify-content: space-between; gap: .8rem; border-bottom: 1px dashed var(--s-line); padding-bottom: .75rem; margin-bottom: .8rem; }
+.notice-sheet header h2 { margin: 0; }
+.seal-chip { color: var(--s-accent); font: 750 1.1rem var(--s-display); padding: .3rem .6rem; border: 3px double currentColor; white-space: nowrap; transform: rotate(-4deg); }
+.notice-stamp { display: grid; grid-template-columns: auto 1fr; column-gap: .9rem; }
+.notice-stamp dd { margin: 0; }
+.notice-sheet > label { margin-bottom: .8rem; }
+@media(max-width: 760px) {
+  .heat-panels,.ledger-layout,.metric-folio { grid-template-columns: 1fr; }
+}
+@media(max-width: 430px) {
+  .zone-ledger table :is(th,td) { font-size: .8rem; }
+  .period-tab { width: 100%; }
+}

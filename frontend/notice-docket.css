@@ -1,0 +1,7 @@
+.followup-board { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(225px,1fr); gap:1rem; align-items:start; }
+.notice-deliveries,.objection-thread { list-style:none; padding:0; margin:.35rem 0 .8rem; }
+.notice-deliveries li { display:grid; grid-template-columns:1fr minmax(65px,.5fr) 1fr; align-items:center; gap:.35rem; padding:.5rem .25rem; border-bottom:1px dashed var(--s-line); }
+.objection-thread li { border-left:3px solid var(--s-accent); padding:.55rem .65rem; margin-bottom:.65rem; background:var(--s-page); }
+.objection-thread blockquote { margin:.4rem 0 0; padding:.4rem .55rem; border:1px solid var(--s-line); }
+.followup-board form + form { border-top:1px dashed var(--s-line); padding-top:.75rem; margin-top:.75rem; }
+@media(max-width:750px) { .followup-board { grid-template-columns:1fr; } }
